@@ -31,7 +31,6 @@ Scanner lea = new Scanner(System.in);
                 }//fin del case 1
                 break;
                 
-                
                 case 2:
                     centinela = false;
                  break;
