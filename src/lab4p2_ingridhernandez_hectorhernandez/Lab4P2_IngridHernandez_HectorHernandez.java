@@ -21,8 +21,9 @@ Scanner lea = new Scanner(System.in);
         boolean centinela = true;
         
         while(centinela == true){
-            System.out.println("1)Ejercicio 1- ");
-             System.out.println("2)Salir");
+            System.out.println("1)Crear Jugadores y Vehiculos");
+            System.out.println("2)Jugar");
+             System.out.println("3)Salir");
              System.out.print("Ingrese la opcion que desea: ");
             int opcion = lea.nextInt();
             switch (opcion){
@@ -30,8 +31,11 @@ Scanner lea = new Scanner(System.in);
                     
                 }//fin del case 1
                 break;
-                
-                case 2:
+                case 2:{
+                    
+                }//fin del case 2
+                break;
+                case 3:
                     centinela = false;
                  break;
            
