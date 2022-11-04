@@ -17,12 +17,13 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        Scanner lea = new Scanner(System.in);
-        Random r = new Random();
+    static Scanner lea = new Scanner(System.in);
+    static Random r = new Random();
+    static ArrayList<Jugadores> jug = new ArrayList();
+    static ArrayList<Vehiculos> veh = new ArrayList();
 
-        ArrayList<Jugadores> jug = new ArrayList();
-        ArrayList<Vehiculos> veh = new ArrayList();
+    public static void main(String[] args) {
+        
 
         boolean centinela = true;
         while (centinela == true) {
@@ -241,7 +242,9 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                 }//fin del case 1
                 break;
                 case 2: {
-
+                    Object[][]matriz = new Object[10][10];
+                    System.out.println("MAPA");
+                    Imprimir(Lectura());
                 }//fin del case 2
                 break;
                 case 3:
@@ -252,5 +255,32 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
             }//fin del switch
         }//fin while
     }// Fin del main
+ public static Object[][] Lectura() {
+        Object[][] llena = new Object[10][10];
 
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                llena[i][j] = " ";
+            }
+        }
+        int contador = 0;
+        for (int i = 0; i < 12; i++) {
+            int x = r.nextInt(9);
+            int y = r.nextInt(9);
+            if (contador < veh.size()) {
+                llena[x][y] = veh.get(contador).getNombre();
+                contador++;
+            }
+        }
+        return llena;
+    }
+
+    public static void Imprimir(Object[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print("[" + matriz[i][j] + "]" + " ");
+            }
+            System.out.println();
+}
+}
 }
