@@ -8,7 +8,7 @@ package lab4p2_ingridhernandez_hectorhernandez;
  *
  * @author ADMINISTRADOR1
  */
-public class Vehiculos {
+public abstract class Vehiculos implements Movimiento{
     private String Nombre;
     private int da;
     private int coordX;
@@ -90,6 +90,9 @@ public class Vehiculos {
     public String toString() {
         return "Vehiculos{" + "Nombre=" + Nombre + ", da=" + da + ", coordX=" + coordX + ", coordY=" + coordY + ", vida=" + vida + ", j=" + j + ", TColor=" + TColor + '}';
     }
+
+    @Override
+    public abstract int movimiento(int x2, int y2);
     
     
     

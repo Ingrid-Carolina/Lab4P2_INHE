@@ -38,6 +38,10 @@ public class Aviones extends Vehiculos{
     public String toString() {
         return super.toString()+"Aviones{" + "coord_x=" + coord_x + ", coord_y=" + coord_y + '}';
     }
+    public int movimiento(int x2, int y2) {
+        int d = (int) Math.sqrt(Math.pow((x2 - this.coord_x),2) + Math.pow((y2 - this.coord_y), 2));
+        return d;
+    }
     
     
     
