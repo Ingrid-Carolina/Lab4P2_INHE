@@ -4,6 +4,7 @@
  */
 package lab4p2_ingridhernandez_hectorhernandez;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -17,9 +18,10 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
      */
     public static void main(String[] args) {
         Scanner lea = new Scanner(System.in);
-
+        
+        ArrayList <Jugadores> jug = new ArrayList();
+        ArrayList <Vehiculos> veh = new ArrayList();
         boolean centinela = true;
-
         while (centinela == true) {
             System.out.println("1) Crear Jugadores y Vehiculos");
             System.out.println("2) Jugar");
@@ -28,8 +30,33 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1: {
-                    String jugadores [] = {"Hector", "Diviana", "Carlos", "Diego", "Jose", "Monolito", "Paulina", "Daniel", "James", "Andres", "Esther", "Rigoberto", "Luis", "Kratos", "Odin", "Zeus", "Thor", "Loki", "Freya"};
-                    String vehiculos [] = {"Ferrari", "Lamborgini", "Maclaren", "Formula 1", "Chevrolet", "Nissan", "Hyundai", "Toyota", "Triton", "Hilux", "Eon", "Santa Fe", "Mustang", "Jeep", "Sancho Panza", "Demogorgon", "Mark Anthony"};
+                    String jugadores[] = {"Hector", "Diviana", "Carlos", "Diego", "Jose", "Monolito", "Paulina", "Daniel", "James", "Andres", "Esther", "Rigoberto", "Luis", "Kratos", "Odin", "Zeus", "Thor", "Loki", "Freya"};
+                    String vehiculos[] = {"Ferrari", "Lamborgini", "Maclaren", "Formula 1", "Chevrolet", "Nissan", "Hyundai", "Toyota", "Triton", "Hilux", "Eon", "Santa Fe", "Mustang", "Jeep", "Sancho Panza", "Demogorgon", "Mark Anthony"};
+                    boolean centinela2 = true;
+                        while (centinela2 == true) {
+                        System.out.println("1)Crear Jugador ");
+                        System.out.println("2)Craear Vehiculos ");
+                        System.out.println("3)Salir");
+                        System.out.print("Ingrese la opcion que desea: ");
+                        int op = lea.nextInt();
+                        switch (op) {
+                            case 1: {
+
+                            }//fin del case 1
+                            break;
+                            case 2: {
+
+                            }//fin del case 2
+                            break;
+
+                            case 3:
+                                centinela2 = false;
+                                break;
+
+                            default:
+                                System.out.println("Opcion Incorrecta");
+                        }//fin del switch
+                    }//fin while
                 }//fin del case 1
                 break;
                 case 2: {
