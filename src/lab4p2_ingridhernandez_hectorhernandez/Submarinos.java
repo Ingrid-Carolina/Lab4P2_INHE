@@ -31,14 +31,14 @@ public class Submarinos extends Vehiculos{
     }
 
     public void setCoord_y(int coord_y) {
-        if (coord_y >= 0 && coord_y <=9) {
+        if (coord_y == 0 && coord_y == 9) {
             this.coord_y = coord_y;
         }
     }
 
     @Override
     public String toString() {
-        return "Submarinos{" + "coord_x=" + coord_x + ", coord_y=" + coord_y + '}';
+        return super.toString()+"Submarinos{" + "coord_x=" + coord_x + ", coord_y=" + coord_y + '}';
     }
     
     public int movimiento(int x2, int y2) {

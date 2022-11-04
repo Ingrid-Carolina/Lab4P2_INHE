@@ -31,7 +31,7 @@ public class Barcos extends Vehiculos{
     }
 
     public void setCoord_y(int coord_y) {
-        if (coord_y >= 1 && coord_y <=8) {
+        if (coord_y == 1 && coord_y ==8) {
             this.coord_y = coord_y;
         }
     }
