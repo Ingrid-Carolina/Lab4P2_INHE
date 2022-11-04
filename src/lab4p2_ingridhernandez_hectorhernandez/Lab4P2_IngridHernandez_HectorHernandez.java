@@ -23,7 +23,6 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
     static ArrayList<Vehiculos> veh = new ArrayList();
 
     public static void main(String[] args) {
-        
 
         boolean centinela = true;
         while (centinela == true) {
@@ -114,7 +113,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                                                 System.out.println("Ingrese la Coordenada Y:");
                                                 int corY = lea.nextInt();
                                                 veh.add(new Aviones(corx, corY, nombre, da, cordX, coordY, vida, jug.get(pos), t));
-                                                
+
                                                 System.out.println("Aviones: ");
                                                 String salida = "";
                                                 for (Object e : veh) {
@@ -242,9 +241,11 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                 }//fin del case 1
                 break;
                 case 2: {
-                    Object[][]matriz = new Object[10][10];
+                    Object[][] matriz = new Object[10][10];
                     System.out.println("MAPA");
-                    Imprimir(Lectura());
+                    matriz = Lectura();
+                    Imprimir(matriz);
+                    
                 }//fin del case 2
                 break;
                 case 3:
@@ -255,23 +256,60 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
             }//fin del switch
         }//fin while
     }// Fin del main
- public static Object[][] Lectura() {
+
+    public static Object[][] Lectura() {
         Object[][] llena = new Object[10][10];
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                llena[i][j] = " ";
+                llena[i][j] = "  ";
             }
         }
+        System.out.println(veh.size());
+
+        int pos =r.nextInt(veh.size());
         int contador = 0;
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < pos; i++) {
             int x = r.nextInt(9);
             int y = r.nextInt(9);
             if (contador < veh.size()) {
-                llena[x][y] = veh.get(contador).getNombre();
-                contador++;
+                if (veh.get(contador) instanceof Aviones) {
+                    System.out.println("es avion");
+                    if (((Vehiculos) veh.get(contador)).getTColor().equals("Rojo")) {
+                        String a = "AR";
+                        llena[x][y] = a;
+                        System.out.println(a);
+                        contador++;
+                    } else if (((Vehiculos) veh.get(contador)).getTColor().equals("Azul")) {
+                        String a = "AA";
+                        llena[x][y] = a;
+                        contador++;
+                    }
+                }
+                if (veh.get(contador) instanceof Barcos) {
+                    if (((Vehiculos) veh.get(contador)).getTColor().equals("Rojo")) {
+                        String a = "BR";
+                        llena[x][y] = a;
+                        contador++;
+                    } else if (((Vehiculos) veh.get(contador)).getTColor().equals("Azul")) {
+                        String a = "BA";
+                        llena[x][y] = a;
+                        contador++;
+                    }
+                }
+                if (veh.get(contador) instanceof Submarinos) {
+                    if (((Vehiculos) veh.get(contador)).getTColor().equals("Rojo")) {
+                        String a = "SR";
+                        llena[x][y] = a;
+                        contador++;
+                    } else if (((Vehiculos) veh.get(contador)).getTColor().equals("Azul")) {
+                        String a = "SA";
+                        llena[x][y] = a;
+                        contador++;
+                    }
+                }
             }
-        }
+        }//Fin for
         return llena;
     }
 
@@ -281,6 +319,6 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                 System.out.print("[" + matriz[i][j] + "]" + " ");
             }
             System.out.println();
-}
-}
+        }
+    }
 }
