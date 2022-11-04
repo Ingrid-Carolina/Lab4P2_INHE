@@ -31,7 +31,7 @@ public abstract class Vehiculos implements Movimiento{
     }
 
     public String getNombre() {
-        return Nombre;
+        return Nombre + " " + TColor;
     }
 
     public void setNombre(String Nombre) {

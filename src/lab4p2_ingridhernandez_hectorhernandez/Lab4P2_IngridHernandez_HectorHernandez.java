@@ -251,6 +251,6 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                     System.out.println("Opcion Incorrecta");
             }//fin del switch
         }//fin while
-    }
+    }// Fin del main
 
 }
