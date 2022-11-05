@@ -20,14 +20,11 @@ public abstract class Vehiculos implements Movimiento{
     public Vehiculos() {
     }
 
-    public Vehiculos(String Nombre, int da, int coordX, int coordY, int vida, Jugadores j, String TColor) {
+    public Vehiculos(String Nombre, int da, int vida, Jugadores j) {
         this.Nombre = Nombre;
         this.da = da;
-        this.coordX = coordX;
-        this.coordY = coordY;
         this.vida = vida;
         this.j = j;
-        this.TColor = TColor;
     }
 
     public String getNombre() {

@@ -88,35 +88,15 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                                                 pos2 = r.nextInt(vehiculos.length - 1);
                                                 String nombre = vehiculos[pos2];
                                                 int da = 100 + r.nextInt(150);
-                                                int cordX = 0;
-                                                int coordY = 0;
                                                 int vida = 500 + r.nextInt(500);
                                                 int pos;
                                                 pos = r.nextInt(jug.size() - 1);
 
-                                                System.out.println("============ Tipo de Equipo ============ ");
-                                                System.out.println("1)Equipo Azul");
-                                                System.out.println("2)Equipo Rojo");
-                                                System.out.println("======================================");
-                                                System.out.println("Ingrese el Tipo de Equipo que Desea: ");
-                                                int p = lea.nextInt();
-                                                String t = "";
-                                                if (p == 1) {
-                                                    t = "Azul ";
-                                                } else if (p == 2) {
-                                                    t = "Rojo";
-                                                } else {
-                                                    System.out.println("El numero que Ingrese no Esta:");
-                                                }
-                                                System.out.println("Ingrese la Coordenada X:");
-                                                int corx = lea.nextInt();
-                                                System.out.println("Ingrese la Coordenada Y:");
-                                                int corY = lea.nextInt();
-                                                veh.add(new Aviones(corx, corY, nombre, da, cordX, coordY, vida, jug.get(pos), t));
+                                                veh.add(new Aviones( nombre, da, vida, jug.get(pos)));
 
                                                 System.out.println("Aviones: ");
                                                 String salida = "";
-                                                for (Object e : veh) {
+                                                for (Vehiculos e : veh) {
                                                     if (e instanceof Aviones) {
                                                         String mensaje = String.format("%d %s%n", veh.indexOf(e), e);
                                                         salida += mensaje;
@@ -136,31 +116,10 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                                                 pos2 = r.nextInt(vehiculos.length - 1);
                                                 String nombre = vehiculos[pos2];
                                                 int da = 100 + r.nextInt(150);
-                                                int cordX = 0;
-                                                int coordY = 0;
                                                 int vida = 500 + r.nextInt(500);
                                                 int pos;
                                                 pos = r.nextInt(jug.size() - 1);
-
-                                                System.out.println("============ Tipo de Equipo ============ ");
-                                                System.out.println("1)Equipo Azul");
-                                                System.out.println("2)Equipo Rojo");
-                                                System.out.println("======================================");
-                                                System.out.println("Ingrese el Tipo de Equipo que Desea: ");
-                                                int p = lea.nextInt();
-                                                String t = "";
-                                                if (p == 1) {
-                                                    t = "Azul ";
-                                                } else if (p == 2) {
-                                                    t = "Rojo";
-                                                } else {
-                                                    System.out.println("El numero que Ingrese no Esta:");
-                                                }
-                                                System.out.println("Ingrese la Coordenada X:");
-                                                int corx = lea.nextInt();
-                                                System.out.println("Ingrese la Coordenada Y:");
-                                                int corY = lea.nextInt();
-                                                veh.add(new Barcos(corx, corY, nombre, da, cordX, coordY, vida, jug.get(pos), t));
+                                                veh.add(new Barcos( nombre, da, vida, jug.get(pos)));
                                                 System.out.println("Barcos: ");
                                                 String salida = "";
                                                 for (Object e : veh) {
@@ -182,31 +141,11 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                                                 pos2 = r.nextInt(vehiculos.length - 1);
                                                 String nombre = vehiculos[pos2];
                                                 int da = 100 + r.nextInt(150);
-                                                int cordX = 0;
-                                                int coordY = 0;
                                                 int vida = 500 + r.nextInt(500);
                                                 int pos;
                                                 pos = r.nextInt(jug.size() - 1);
 
-                                                System.out.println("============ Tipo de Equipo ============ ");
-                                                System.out.println("1)Equipo Azul");
-                                                System.out.println("2)Equipo Rojo");
-                                                System.out.println("======================================");
-                                                System.out.println("Ingrese el Tipo de Equipo que Desea: ");
-                                                int p = lea.nextInt();
-                                                String t = "";
-                                                if (p == 1) {
-                                                    t = "Azul ";
-                                                } else if (p == 2) {
-                                                    t = "Rojo";
-                                                } else {
-                                                    System.out.println("El numero que Ingrese no Esta:");
-                                                }
-                                                System.out.println("Ingrese la Coordenada X:");
-                                                int corx = lea.nextInt();
-                                                System.out.println("Ingrese la Coordenada Y:");
-                                                int corY = lea.nextInt();
-                                                veh.add(new Submarinos(corx, corY, nombre, da, cordX, coordY, vida, jug.get(pos), t));
+                                                veh.add(new Submarinos(nombre, da, vida, jug.get(pos)));
                                                 System.out.println("Submarinos: ");
                                                 String salida = "";
                                                 for (Object e : veh) {
@@ -216,7 +155,6 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                                                     }
                                                 }
                                                 System.out.println(salida);
-
                                             } catch (Exception e) {
                                                 System.out.println("Tiene que crear jugadores primero!");
                                             }
@@ -267,49 +205,73 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
         }
         System.out.println(veh.size());
 
-        int pos =r.nextInt(veh.size());
+        int pos = 1 + r.nextInt(veh.size()-1);
         int contador = 0;
-        for (int i = 0; i < pos; i++) {
-            int x = r.nextInt(9);
-            int y = r.nextInt(9);
-            if (contador < veh.size()) {
-                if (veh.get(contador) instanceof Aviones) {
-                    System.out.println("es avion");
-                    if (((Vehiculos) veh.get(contador)).getTColor().equals("Rojo")) {
-                        String a = "AR";
-                        llena[x][y] = a;
-                        System.out.println(a);
-                        contador++;
-                    } else if (((Vehiculos) veh.get(contador)).getTColor().equals("Azul")) {
-                        String a = "AA";
-                        llena[x][y] = a;
-                        contador++;
+        for (int k = 0; k < 2; k++){
+            String color = k == 0 ? "Rojo" : "Azul";
+            for (int i = 0; i < pos; i++) {
+                int x = r.nextInt(9);
+                int y = r.nextInt(9);
+                
+                int eleccion = r.nextInt(veh.size());
+                ((Vehiculos) veh.get(eleccion)).setTColor(color);
+                
+                if (contador < veh.size()) {
+                    if (veh.get(eleccion) instanceof Aviones) {
+                        do{
+                            x = r.nextInt(9);
+                            y = r.nextInt(9);
+                         }while(!llena[x][y].equals(" "));
+                        if (color.equals("Rojo")) {
+                            String a = "AR";
+                            llena[x][y] = a;
+                            contador++;
+                        } else if (color.equals("Azul")) {
+                            String a = "AA";
+                            llena[x][y] = a;
+                            contador++;
+                        }
+                    }
+                    if (veh.get(eleccion) instanceof Barcos) {
+                        
+                        if (color.equals("Rojo")) {
+                            do{                           
+                            y = r.nextInt(9);
+                         }while(!llena[0][y].equals(" "));
+                            String a = "BR";
+                            llena[0][y] = a;
+                            contador++;
+                        } else if (color.equals("Azul")) {
+                            do{                           
+                            y = r.nextInt(9);
+                         }while(!llena[9][y].equals(" "));
+                            String a = "BA";
+                            llena[9][y] = a;
+                            contador++;
+                        }
+                    }
+                    if (veh.get(eleccion) instanceof Submarinos) {
+                        
+                        if (color.equals("Rojo")) {
+                            do{
+                                y = r.nextInt(9);
+                            }while(!llena[1][y].equals(" "));
+                            String a = "SR";
+                            llena[1][y] = a;
+                            contador++;
+                            
+                        } else if (color.equals("Azul")) {
+                            do{
+                                y = r.nextInt(9);
+                            }while(!llena[8][y].equals(" "));
+                            String a = "SA";
+                            llena[8][y] = a;
+                            contador++;
+                        }
                     }
                 }
-                if (veh.get(contador) instanceof Barcos) {
-                    if (((Vehiculos) veh.get(contador)).getTColor().equals("Rojo")) {
-                        String a = "BR";
-                        llena[x][y] = a;
-                        contador++;
-                    } else if (((Vehiculos) veh.get(contador)).getTColor().equals("Azul")) {
-                        String a = "BA";
-                        llena[x][y] = a;
-                        contador++;
-                    }
-                }
-                if (veh.get(contador) instanceof Submarinos) {
-                    if (((Vehiculos) veh.get(contador)).getTColor().equals("Rojo")) {
-                        String a = "SR";
-                        llena[x][y] = a;
-                        contador++;
-                    } else if (((Vehiculos) veh.get(contador)).getTColor().equals("Azul")) {
-                        String a = "SA";
-                        llena[x][y] = a;
-                        contador++;
-                    }
-                }
-            }
-        }//Fin for
+            }//Fin for
+        }
         return llena;
     }
 

@@ -12,10 +12,8 @@ public class Aviones extends Vehiculos{
         super();
     }
 
-    public Aviones(int coord_x, int coord_y, String Nombre, int da, int coordX, int coordY, int vida, Jugadores j, String TColor) {
-        super(Nombre, da, coordX, coordY, vida, j, TColor);
-        this.coord_x = coord_x;
-        this.coord_y = coord_y;
+    public Aviones(String Nombre, int da, int vida, Jugadores j) {
+        super(Nombre, da, vida, j);
     }
 
     public int getCoord_x() {
