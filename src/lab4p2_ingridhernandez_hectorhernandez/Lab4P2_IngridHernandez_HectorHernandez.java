@@ -185,10 +185,14 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                 }//fin del case 1
                 break;
                 case 2: {
-                    Object[][] matriz = new Object[10][10];
-                    System.out.println("MAPA");
+                    try{
+                      Object[][] matriz = new Object[10][10];
+                    System.out.println("                       MAPA                        ");
                     matriz = Lectura();
-                    Imprimir(matriz);
+                    Imprimir(matriz);  
+                    }catch (Exception e){
+                         System.out.println("Tiene que crear jugadores y Vehiculos primero!");
+                    }
                     
                 }//fin del case 2
                 break;
@@ -209,7 +213,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                 llena[i][j] = "  ";
             }
         }
-        System.out.println(veh.size());
+       // System.out.println(veh.size());
 
         int pos = 1 + r.nextInt(veh.size()-1);
         
@@ -225,7 +229,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                             x = r.nextInt(9);
                             y = r.nextInt(9);
                          }while(!llena[x][y].equals("  "));
-                        System.out.println(x+","+y);
+                        
                         if (color.equals("Rojo")) {
                             String a = "AR";
                             llena[x][y] = a;
@@ -242,7 +246,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                             do{                           
                             y = r.nextInt(9);
                          }while(!llena[0][y].equals("  "));
-                            System.out.println(x+"/RB"+y);
+                          
                             String a = "BR";
                             llena[0][y] = a;
                             
@@ -250,7 +254,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                             do{                           
                             y = r.nextInt(9);
                          }while(!llena[9][y].equals("  "));
-                            System.out.println(x+"//AB"+y);
+                           
                             String a = "BA";
                             llena[9][y] = a;
                            
@@ -262,7 +266,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                             do{
                                 y = r.nextInt(9);
                             }while(!llena[1][y].equals("  "));
-                            System.out.println(x+"=RS "+y);
+                            
                             String a = "SR";
                             llena[1][y] = a;
                             
@@ -271,7 +275,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                             do{
                                 y = r.nextInt(9);
                             }while(!llena[8][y].equals("  "));
-                            System.out.println(x+"==AS "+y);
+                           
                             String a = "SA";
                             llena[8][y] = a;
                             
