@@ -215,13 +215,12 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                 
                 int eleccion = r.nextInt(veh.size());
                 ((Vehiculos) veh.get(eleccion)).setTColor(color);
-                
                 if (contador < veh.size()) {
                     if (veh.get(eleccion) instanceof Aviones) {
                         do{
                             x = r.nextInt(9);
                             y = r.nextInt(9);
-                         }while(!llena[x][y].equals(" "));
+                         }while(!llena[x][y].equals("  "));
                         if (color.equals("Rojo")) {
                             String a = "AR";
                             llena[x][y] = a;
@@ -237,14 +236,14 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                         if (color.equals("Rojo")) {
                             do{                           
                             y = r.nextInt(9);
-                         }while(!llena[0][y].equals(" "));
+                         }while(!llena[0][y].equals("  "));
                             String a = "BR";
                             llena[0][y] = a;
                             contador++;
                         } else if (color.equals("Azul")) {
                             do{                           
                             y = r.nextInt(9);
-                         }while(!llena[9][y].equals(" "));
+                         }while(!llena[9][y].equals("  "));
                             String a = "BA";
                             llena[9][y] = a;
                             contador++;
@@ -255,7 +254,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                         if (color.equals("Rojo")) {
                             do{
                                 y = r.nextInt(9);
-                            }while(!llena[1][y].equals(" "));
+                            }while(!llena[1][y].equals("  "));
                             String a = "SR";
                             llena[1][y] = a;
                             contador++;
@@ -263,7 +262,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                         } else if (color.equals("Azul")) {
                             do{
                                 y = r.nextInt(9);
-                            }while(!llena[8][y].equals(" "));
+                            }while(!llena[8][y].equals("  "));
                             String a = "SA";
                             llena[8][y] = a;
                             contador++;
