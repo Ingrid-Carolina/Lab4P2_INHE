@@ -40,6 +40,7 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
 
                     boolean bandera = true;
                     while (bandera == true) {
+                        System.out.println();
                         System.out.println("=========== Submenu ==============");
                         System.out.println("1) Crear Jugador ");
                         System.out.println("2) Crear Vehiculos ");
@@ -79,8 +80,10 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                                     System.out.println("3)Submarinos");
                                     System.out.println("4)Salir");
                                     System.out.println("=========================================");
-                                    System.out.print("Ingrese la opcion que desea: ");
-                                    int o = lea.nextInt();
+                                    System.out.print("Cuantos Vehiculos desea crear? ");
+                                    int cantidad = lea.nextInt();
+                                    for (int i = 0; i <= cantidad; i++) {
+                                    int o = 1+r.nextInt(3);
                                     switch (o) {
                                         case 1: {
                                             try {
@@ -166,6 +169,9 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                                         default:
                                             System.out.println("Opcion Incorrecta");
                                     }//fin del switch
+                                    centinela3 = false;
+                                   }
+                                    
                                 }//fin while
                             }//fin del case 2
                             break;
@@ -206,29 +212,28 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
         System.out.println(veh.size());
 
         int pos = 1 + r.nextInt(veh.size()-1);
-        int contador = 0;
+        
         for (int k = 0; k < 2; k++){
             String color = k == 0 ? "Rojo" : "Azul";
             for (int i = 0; i < pos; i++) {
                 int x = r.nextInt(9);
                 int y = r.nextInt(9);
-                
                 int eleccion = r.nextInt(veh.size());
                 ((Vehiculos) veh.get(eleccion)).setTColor(color);
-                if (contador < veh.size()) {
-                    if (veh.get(eleccion) instanceof Aviones) {
+                if (veh.get(eleccion) instanceof Aviones) {
                         do{
                             x = r.nextInt(9);
                             y = r.nextInt(9);
                          }while(!llena[x][y].equals("  "));
+                        System.out.println(x+","+y);
                         if (color.equals("Rojo")) {
                             String a = "AR";
                             llena[x][y] = a;
-                            contador++;
+                           
                         } else if (color.equals("Azul")) {
                             String a = "AA";
                             llena[x][y] = a;
-                            contador++;
+                            
                         }
                     }
                     if (veh.get(eleccion) instanceof Barcos) {
@@ -237,16 +242,18 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                             do{                           
                             y = r.nextInt(9);
                          }while(!llena[0][y].equals("  "));
+                            System.out.println(x+"/RB"+y);
                             String a = "BR";
                             llena[0][y] = a;
-                            contador++;
+                            
                         } else if (color.equals("Azul")) {
                             do{                           
                             y = r.nextInt(9);
                          }while(!llena[9][y].equals("  "));
+                            System.out.println(x+"//AB"+y);
                             String a = "BA";
                             llena[9][y] = a;
-                            contador++;
+                           
                         }
                     }
                     if (veh.get(eleccion) instanceof Submarinos) {
@@ -255,20 +262,22 @@ public class Lab4P2_IngridHernandez_HectorHernandez {
                             do{
                                 y = r.nextInt(9);
                             }while(!llena[1][y].equals("  "));
+                            System.out.println(x+"=RS "+y);
                             String a = "SR";
                             llena[1][y] = a;
-                            contador++;
+                            
                             
                         } else if (color.equals("Azul")) {
                             do{
                                 y = r.nextInt(9);
                             }while(!llena[8][y].equals("  "));
+                            System.out.println(x+"==AS "+y);
                             String a = "SA";
                             llena[8][y] = a;
-                            contador++;
+                            
                         }
                     }
-                }
+                
             }//Fin for
         }
         return llena;
